@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Car animation</title>
+    <style>
+        .car {
+            position: absolute;
+            top: 50%;
+            right: 50px;
+            width: 200px;
+            height: 100px;
+            background-color: red;
+            animation: drive 5s linear;
+        }
+        .window {
+            position: absolute;
+            top: 10%;
+            left: 75%;
+            width: 50px;
+            height: 50px;
+            background-color: rgb(11, 129, 165)
+        }
+        .wheel {
+            position: absolute;
+            top: 75%;
+            width: 50px;
+            height: 50px;
+            border-radius: 50%;
+            background-color: black;
+            animation: spin 1s linear ;
+        }
+        .wheel.left {
+            left: 10%;
+        }
+        .wheel.right {
+            right: 10%;
+        }
+        @keyframes drive {
+            0% {
+                right: calc(100% - 110px);
+            }
+            100% {
+                right: 50px;
+            }
+        }
+       
+    </style>
+</head>
+<body>
+    <div class="car">
+        <div class="window"></div>
+        <div class="wheel left"></div>
+        <div class="wheel right"></div>
+    </div>
+</body>
+</html>

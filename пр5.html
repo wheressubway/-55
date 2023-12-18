@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Car Animation</title>
+    <style>
+        #car {
+            position: absolute;
+            top: 50%;
+            right: 50px;
+            width: 100px;
+            height: 50px;
+            background-color: red;
+            animation: carAnimation 5s linear;
+        }
+        #window {
+            position: absolute;
+            top: 25%;
+            left: 25%;
+            width: 50px;
+            height: 50px;
+            background-color: white;
+        }
+        #car::before {
+            content: "";
+            display: block;
+            width: 30px;
+            height: 30px;
+            border-radius: 100%;
+            background-color: black;
+            z-index: 2;
+            position: absolute;
+            bottom: -10px;
+            left: 10px;
+        }
+
+        #car::after {
+            content: "";
+            display: block;
+            width: 30px;
+            height: 30px;
+            border-radius: 100%;
+            background-color: black;
+            position: absolute;
+            bottom: -10px;
+            right: 10px;
+        }
+
+        @keyframes carAnimation {
+            0% {
+                right: calc(100% - 110px);
+            }
+            100% {
+                right: 50px;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div id="car"></div>
+    <div class="window"></div>
+</body>
+
+</html>
